@@ -8,7 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
         body {
             background-color: #424548;
@@ -75,6 +75,10 @@
             background-color: #ededed !important;
         }
 
+        #tombol {
+            background-color: #ffffff;
+        }
+
   </style>
 </head>
 <body class="d-flex justify-content-center align-items-center">
@@ -97,19 +101,22 @@
             <div class="pt-3 row">
                 <div class="col-12 text-center">
                     <div class="text-white font-weight-bold">
-                        <p class="brand_name mb-0">@tenjinscrollworks<br></p>
+                        <button class="btn btn-primary" onclick="changeText();">Change Text</button>
+                        <button class="btn btn-success" onclick="showme();">Show Me!</button>
+                        <button class="btn btn-info" onclick="changeStyle();">Change Style</button>
+                        <p id="brand_name" class="brand_name mb-0">@tenjinscrollworks<br></p>
                         <p class="motto">Get your gears ready, join the forces.</p>
                     </div>
                 </div>
             </div>
             <!-- Link Button Section -->
             <div class="pt-3 row pr-3 pl-3">
-                <button class="btn-menu col-12 bg-white text-center rounded-lg btn pt-3 pb-3 d-flex justify-content-between align-items-center">
+                <button id="tombol" class="relative btn-menu col-12 text-center rounded-lg btn pt-3 pb-3 d-flex justify-content-between align-items-center">
                     <div></div>
                     <div>
                         🛒 Toco Store Page (Indonesia)
                     </div>
-                    <div class="font-weight-bolder relative menu-button rounded-circle">
+                    <div class="z-3 font-weight-bolder relative menu-button rounded-circle">
                         :
                     </div>
                 </button>
@@ -216,6 +223,37 @@
                 </div>
             </div>
     </div>
+
+<script>
+    function showme() {
+        // alert("Halo, selamat datang!");
+        console.log("Ini baris ke 112, sudah sampai sini");
+        a = 18 + 18;
+        console.log("Hasil Penjumlahan: " + a);
+        c = 1 * 2 * 3;
+        console.log("Haisl Perkalian: " + c);
+
+        Swal.fire({
+            title: 'Hallo!!',
+            text: 'Selamat Siang',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+        })
+    }
+
+    function changeText() {
+        const elem = document.getElementById("brand_name");
+        elem.innerHTML = "Sistem Informasi";
+    }
+
+    function changeStyle() {
+        const elem = document.getElementById("tombol");
+        elem.style.color = "white";
+        elem.style.backgroundColor = "red";
+
+    }
+</script>
+
 </body>
 </html>
 
